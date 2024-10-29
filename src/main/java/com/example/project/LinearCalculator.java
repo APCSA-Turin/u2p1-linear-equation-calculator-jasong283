@@ -27,7 +27,7 @@ public class LinearCalculator{
         if(aa.contains("0") && c1.length() == 6) {
             a1 = c1.substring(c1.length() - (c1.length() - 1), 3);
         }
-        x1 = Integer.parseInt(a1);
+        x1 = Integer.parseInt(a1); //returns x1 coord
 
 
         String a2 = "";
@@ -49,14 +49,14 @@ public class LinearCalculator{
         if(c1.length() == 6 && c1.indexOf(",") == 3 && c1.indexOf("-") != 1) {
             a2 = c1.substring(4, 5);
         }
-        y1 = Integer.parseInt(a2);
+        y1 = Integer.parseInt(a2); //returns y1 coord
 
 
         String a3 = c2.substring(c1.length() - (c1.length() - 1), 2);
         if(a3.contains("-")) {
             a3 = c2.substring(c1.length() - (c1.length() - 1), 3);
         }
-        x2 = Integer.parseInt(a3);
+        x2 = Integer.parseInt(a3); //returns x2 coord
 
 
         String a4 = "";
@@ -78,7 +78,7 @@ public class LinearCalculator{
         if(c2.length() == 5) {
             a4 = c2.substring(3, 4);
         }
-        y2 = Integer.parseInt(a4);
+        y2 = Integer.parseInt(a4); //returns y2 coord
     }
 
 
@@ -119,12 +119,10 @@ public class LinearCalculator{
         return distance;
     }
 
-    //((slope * (0 - x1)) + y1) == 0)
-
     //slope() -> returns a double. 
     //calculates the slope of the equations and returns the value to the nearest HUNDREDTH
     //if slope is undefined, should return -999.99
-    public double slope() {
+    public double slope() { //calculates for slope
         if(x2 - x1 == 0) {
             slope = -999.99;
         } else {
@@ -138,7 +136,7 @@ public class LinearCalculator{
     //calculates the final equation in y=mx+b form and returns the string
     //if the equation has no slope, the equation should return -> "undefined"
     //HINT: You may need other custom methods to decrease the amount of code in the equations() method
-    public String equation() {
+    public String equation() { //writes the equation in y=mx+b form
 
         if(slope() == -999.99) {
             equation = "undefined";
@@ -159,7 +157,7 @@ public class LinearCalculator{
     //yInt() -> returns a double.
     //calculates the y intercept of the equation and returns the value to the nearest HUNDREDTH
     //if y-int is undefined, should return -999.99
-    public double yInt() {
+    public double yInt() { //calculates the y intercept
         if((x1 - x2) == 0) {
             yInt = -999.99;
         } else {
@@ -167,13 +165,6 @@ public class LinearCalculator{
             yInt = yInt / 100;
         }
         return yInt;
-    }
-
-
-    //roundedToHundredth(double x)-> returns double
-    //calculates the input to the nearest hundredth and returns that value
-    public double roundedToHundredth(double x) {
-        return 0.0;
     }
 
     //printInfo() -> returns a string of information
